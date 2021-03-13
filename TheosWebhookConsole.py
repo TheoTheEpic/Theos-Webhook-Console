@@ -72,7 +72,7 @@ def main():
         if option == "6":
             print("Loading version...")
             time.sleep(0.5)
-            print("Version: V1.1")
+            print("Version: V1.2")
 
 if __name__ == "__main__":
   main()
