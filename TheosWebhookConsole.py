@@ -19,6 +19,7 @@ def main():
         [6] Checks the version
         [7] Posts an ad for this webhook console
         [8] Pings everyone... :troll:
+        [9] Sends sus!1!!!
         ==> ''')
 
         version = "V1.5"
@@ -101,7 +102,14 @@ def main():
             print("Sent @everyone ping!")
 
         if option == "9":
-           print("WIP")
+         data = {"content": "When the imposter is sus :flushed:"}
+         data2 = {"content": "https://media.discordapp.net/attachments/804662853059608627/820368810942398464/sus2.png"}
+         headers = {"content-type": "application/json"}
+         print("Sending sus :flushed:")
+         time.sleep(0.5)
+         r = requests.post(hook, json=data,headers=headers)
+         r = requests.post(hook, json=data2,headers=headers)
+         print("Sent sus :flushed:")
 
 
 if __name__ == "__main__":
