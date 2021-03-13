@@ -113,7 +113,7 @@ def main():
          r = requests.post(hook, json=data2,headers=headers)
          print("Sent sus :flushed:")
 
-        if option == "rick":
+        if option == "rickroll":
             data = {"content": "Come watch this epic video! :money_mouth: <http://bit.ly/pog-video>"}
             headers = {"content-type": "application/json"}
             print("Sending rickroll...")
