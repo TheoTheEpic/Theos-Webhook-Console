@@ -16,7 +16,10 @@ def main():
         [4] Change webhook name
         [5] Say one message
         [6] Checks the version
+        [7] Posts an ad for this webhook console
         ==> ''')
+
+        version = "V1.3"
 
         if option == "0":
             hook = input("Webhook URL: ")
@@ -72,7 +75,15 @@ def main():
         if option == "6":
             print("Loading version...")
             time.sleep(0.5)
-            print("Version: V1.2 (You may need to download the latest version at https://github.com/TheoTheEpic/Theos-Webhook-Console)")
+            print("Version: ",version," (You may need to download the latest version at https://github.com/TheoTheEpic/Theos-Webhook-Console)")
+
+        if option == "7":
+            data = {"content": "Get Theo's webhook console today! At: https://github.com/TheoTheEpic/Theos-Webhook-Console"}
+            headers = {"content-type": "application/json"}
+            print("Posting ad...")
+            time.sleep(0.5)
+            r = requests.post(hook, json=data,headers=headers)
+            print("Posted")
 
 if __name__ == "__main__":
   main()
