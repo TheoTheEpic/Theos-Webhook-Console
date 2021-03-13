@@ -8,6 +8,7 @@ print("Loaded.")
 
 def main():
     while True:
+        print("Command list (Just type a number and press enter):")
         option = input('''
         [0] Sets the webhook URL
         [1] Webhook message spammer
@@ -17,15 +18,20 @@ def main():
         [5] Say one message
         [6] Checks the version
         [7] Posts an ad for this webhook console
+        [8] Pings everyone... :troll:
         ==> ''')
 
-        version = "V1.3"
+        version = "V1.5"
 
         if option == "0":
             hook = input("Webhook URL: ")
+            data = {"content": "Success, connected to this webhook. Thanks for using Theo's Webhook Console by TheoTheEpic#0069"}
+            headers = {"content-type": "application/json"}
             print("Setting the webhook url to: ",hook)
             time.sleep(0.5)
-            print("Success! Set the url to: ",hook," To change it again just run 0")
+            r = requests.post(hook, json=data,headers=headers)
+            print("Success! Connected to the webhook: ",hook)
+
         
         if option == "1":
             message = input("Message to spam: ")
@@ -36,6 +42,7 @@ def main():
             data = {"content": message}
             time.sleep(wait)
             print("Starting...")
+            print("Started!")
 
             for _ in range(amount):
                 r = requests.post(hook, json=data,headers=headers)
@@ -61,7 +68,7 @@ def main():
             print("Processing...")
             time.sleep(0.5)
             requests.patch(hook, json={"name": wbname})
-            print("succsesfully changed webhook name to: ",wbname)
+            print("Succsesfully changed webhook name to: ",wbname)
 
         if option == "5":
             message = input("Message to say: ")
@@ -84,6 +91,18 @@ def main():
             time.sleep(0.5)
             r = requests.post(hook, json=data,headers=headers)
             print("Posted")
+
+        if option == "8":
+            data = {"content": "@everyone :sunglasses:"}
+            headers = {"content-type": "application/json"}
+            print("Sending @everyone ping...")
+            time.sleep(0.5)
+            r = requests.post(hook, json=data,headers=headers)
+            print("Sent @everyone ping!")
+
+        if option == "9":
+           print("WIP")
+
 
 if __name__ == "__main__":
   main()
