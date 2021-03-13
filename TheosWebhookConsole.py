@@ -72,7 +72,7 @@ def main():
         if option == "6":
             print("Loading version...")
             time.sleep(0.5)
-            print("Version: V1.2")
+            print("Version: V1.2 (You may need to download the latest version at https://github.com/TheoTheEpic/Theos-Webhook-Console)")
 
 if __name__ == "__main__":
   main()
