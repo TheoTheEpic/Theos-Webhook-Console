@@ -10,17 +10,18 @@ def main():
     while True:
         print("Command list:")
         option = input('''
-        [set] Sets the webhook URL
-        [spam] Webhook message spammer
-        [delete] Delete webhook
-        [info] Show webhook info
-        [change-name] Change webhook name
-        [say] Say one message
-        [version] Checks the version
-        [ad] Posts an ad for this webhook console
-        [everyone] Pings everyone... :troll:
-        [sus] Sends sus!1!!!
-        [rick] Sends a rickroll with a bit.ly link
+        [invite] Links the discord server invite.
+        [set] Sets the webhook URL.
+        [spam] Webhook message spammer.
+        [delete] Delete webhook.
+        [info] Show webhook info.
+        [change-name] Change webhook name.
+        [say] Say one message.
+        [version] Checks the version.
+        [ad] Posts an ad for this webhook console.
+        [everyone] Pings everyone.
+        [sus] Sends "When the imposter is sus" meme.
+        [rickroll] Sends a rickroll with a bit.ly link.
         ==> ''')
 
         version = "V1.6"
@@ -119,6 +120,11 @@ def main():
             time.sleep(0.5)
             r = requests.post(hook, json=data,headers=headers)
             print("Sent rickroll!")
+
+        if option == "invite":
+            print("Loading...")
+            time.sleep(0.5)
+            print("Join the discord server: https://discord.gg/7Z7sssw3vr")
 
 
 if __name__ == "__main__":
