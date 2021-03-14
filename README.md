@@ -1,6 +1,6 @@
 Hello!
 
-Thanks for using Theo's webhook console. Please run this with py (https://www.python.org/downloads/).
+Thanks for using Theo's webhook console. (download all of this then open the .exe file)
 
 After every update you will need to redownload here.
 
